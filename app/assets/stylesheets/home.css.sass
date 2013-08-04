@@ -71,6 +71,57 @@ nav
     &:last-child
       margin: 0 0 0 35px
 
+.hero_content
+  margin: 80px 0 0 0
+  position: relative
+  +clearfix
+
+.hero_image, .hero_text,
+  float: left
+
+.hero_image
+  +size (391 448)
+  background: url(iphone.png) no-repeat
+  position: relative
+  overflow-y: hidden
+  +animation(slide 1s)
+
++keyframes (slide)
+  0%
+    +transform(translateY(449px))
+
+.screen
+  +size (330 448)
+  position: absolute
+  left: 33px
+  top: 120px
+
+.glare
+  +size (155 328)
+  background: url(glare.png)
+  position: absolute
+  left: 175px
+  z-index: 3
+
+.one, .two, .three
+  +size (330 448)
+  z-index: 2
+  position: absolute
+  opacity: 1
+
+.one
+  background: url(screen1.png)
+
+.two
+  background: url(screen2.png)
+
+.three
+  background: url(screen3.png)
+
+.hero_text
+  width: 45%
+  text-align: left
+  margin: 120px 0 0 80px
 
 
 
