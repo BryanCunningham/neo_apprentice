@@ -1,6 +1,6 @@
 @import bourbon/bourbon
 $white: #fbf8f0
-$light: #3e4046
+$light-gray: #3e4046
 
 
 
@@ -11,7 +11,7 @@ body
   font-family: $helvetica
   color: $white
   font-weight: bold
-  background-color: $light
+  background-color: $light-gray
   +animation (load 2s)
 
 +keyframes (load)
@@ -39,12 +39,12 @@ p
   font-weight: lighter
 
 h3
-  color: #3e4046
+  color: $light-gray
   margin: 0 0 20px 0
   text-shadow: none
 
 a
-  color: #fbf8f0
+  color: $white
   font-size: 18px
   text-decoration: none
 
@@ -84,28 +84,27 @@ nav
   background: url(iphone.png) no-repeat
   position: relative
   overflow-y: hidden
-  +animation(slide 1s)
+  +animation(phone_slide 1s)
 
-+keyframes (slide)
++keyframes (phone_slide)
   0%
-    +transform(translateY(449px))
+    +transform(translateX(-600px))
 
 .screen
   +size (330 448)
   position: absolute
   left: 33px
-  top: 120px
+  top: 119px
 
 .glare
   +size (155 328)
   background: url(glare.png)
   position: absolute
   left: 175px
-  z-index: 3
+  z-index: 2
 
 .one, .two, .three
   +size (330 448)
-  z-index: 2
   position: absolute
   opacity: 1
 
@@ -122,6 +121,37 @@ nav
   width: 45%
   text-align: left
   margin: 120px 0 0 80px
+  +animation(text_slide 1s)
+
++keyframes (text_slide)
+  0%
+    +transform(translateX(600px))
+
+
+
+.info
+  background: $white
+  z-index: 100
+
+  p
+    color: $light-gray
+
+.feature
+  width: 33%
+  margin: 80px 0
+  padding: 0 3%
+  text-align: center
+  float: left
+
+.circle
+  +size (124)
+  margin: 0 auto 20px
+  border: 5px solid #98b048
+  border-radius: 124px
+  position: relative
+  overflow: hidden
+
+
 
 
 
