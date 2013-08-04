@@ -2,7 +2,7 @@
 $white: #fbf8f0
 $light-gray: #3e4046
 $neo_green: #98b048
-$dark_green: #7e9338
+$dark_green: #72862f
 
 
 
@@ -12,7 +12,6 @@ $dark_green: #7e9338
 body
   font-family: $helvetica
   color: $white
-  font-weight: bold
   line-height: 1.4
   text-shadow: 0px 1px 2px rgba(0,0,0, .6)
   background-color: $light-gray
@@ -29,6 +28,7 @@ body
   +clearfix
 
 h1
+  font-weight: 700
   font-size: 36px
   margin: 0 0 40px 0
 
@@ -85,7 +85,7 @@ nav
 
 .hero_image
   +size (391 448)
-  background: url(iphone.png) no-repeat
+  background: url(iphone.png)
   position: relative
   overflow-y: hidden
   +animation(phone_slide 1s)
@@ -126,6 +126,7 @@ nav
   text-align: left
   margin: 120px 0 0 80px
   +animation(text_slide 1s)
+
   p
     color: #cecec8
 
@@ -218,9 +219,10 @@ nav
   float: left
 
 input[type="text"]
-  background: $neo_green
+  background: transparent
   width: 460px
   font-size: 20px
+  font-weight: 700
   color: $dark_green
   padding: 0 0 6px 0
   margin: 0 40px 20px 0
@@ -239,13 +241,15 @@ textarea
   width: 460px
   height: 224px
   font-size: 20px
-  color: #58691e
+  font-weight: 700
+  color: $dark_green
   padding: 20px
   border: none
   border-radius: 15px
 
   +placeholder
-    color: #7e9338
+    color: $dark_green
+    opacity: .7
 
   &:focus
     outline: 0
