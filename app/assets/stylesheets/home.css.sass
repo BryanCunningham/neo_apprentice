@@ -16,7 +16,7 @@ body
   +animation (load 2s)
 
 .container
-  width: 96%
+  width: 90%
   max-width: 960px
   margin: auto
   +clearfix
@@ -60,25 +60,24 @@ nav
   padding: 20px 0
   text-align: center
   box-shadow: inset 0px 1px 2px rgba(0,0,0, .4)
+  margin: 0 0 40px 0
 
   a
-    margin: 0 35px 0 35px
+    margin: 0 3% 0 3%
 
     &:first-child
-      margin: 0 35px 0 0
+      margin: 0 3% 0 0
     &:last-child
-      margin: 0 0 0 35px
+      margin: 0 0 0 3%
 
 .hero_content
-  margin: 80px 0 0 0
+  margin: 40px 0 0 0
   position: relative
   +clearfix
 
-.hero_image, .hero_text,
-  float: left
-
 .hero_image
   +size (391 448)
+  float: left
   background: url(iphone.png)
   position: relative
   overflow-y: hidden
@@ -116,8 +115,9 @@ nav
 
 .hero_text
   width: 45%
+  float: right
   text-align: left
-  margin: 120px 0 0 80px
+  margin: 100px 0 0 20px
   +animation(text_slide 1s)
 
   p
@@ -234,7 +234,7 @@ input[type="text"]
 textarea
   background: rgba($dark_green, .3)
   width: 460px
-  height: 224px
+  height: 235px
   font-size: 20px
   font-weight: 700
   color: $dark_green
@@ -254,12 +254,35 @@ textarea
 
   .inputs, .text_box
     float: none
+    margin: 80px auto
+    text-align: center
 
-  .inputs
-    margin-bottom: 0
 
-  .text_box
-    margin: 20px 0
+  input[type="text"], textarea
+    width: 80%
+    margin: 40px auto 0
+
+
+@media screen and(max-width: 900px)
+
+  .container
+    width: 80%
+
+  .hero_image, .hero_text
+    float: none
+    text-align: center
+
+  .hero_image, .hero_content
+    margin: auto
+
+  .hero_text
+    width: 90%
+    margin: 0 auto 40px
+
+  .feature
+    float: none
+    width: 100%
+
 
 
 
