@@ -46,6 +46,8 @@ a
   text-decoration: none
 
 header
+  +clearfix
+
   h1
     +hide-text
 
@@ -54,6 +56,11 @@ header
   background: url(neo.png)
   margin: 40px auto
 
+.menu_hamburger
+  float: right
+  display: none
+  cursor: pointer
+
 nav
   +size (100% 60px)
   background: #37393f
@@ -61,6 +68,7 @@ nav
   text-align: center
   box-shadow: inset 0px 1px 2px rgba(0,0,0, .4)
   margin: 0 0 40px 0
+  +transition(all .4s)
 
   a
     margin: 0 3% 0 3%
@@ -70,18 +78,24 @@ nav
     &:last-child
       margin: 0 0 0 3%
 
+.open_nav
+  height: 250px
+
 .hero_content
+  background-size: 100%
   margin: 40px 0 0 0
   position: relative
   +clearfix
 
 .hero_image
   +size (391 448)
+  background: url(iphone.png) no-repeat
   float: left
-  background: url(iphone.png)
   position: relative
   overflow-y: hidden
+  z-index: -1
   +animation(phone_slide 1s)
+
 
 .screen
   +size (330 448)
@@ -118,14 +132,16 @@ nav
   float: right
   text-align: left
   margin: 100px 0 0 20px
-  +animation(text_slide 1s)
+  +animation(load 3.5s)
 
   p
     color: #cecec8
 
 .info
   background: $white
+  position: relative
   text-shadow: none
+  z-index: 0
 
   p
     color: $light-gray
@@ -209,13 +225,20 @@ nav
 .in_touch
   background: $neo_green
 
-.inputs, .text_box
+.inputs
   margin: 80px 0
   float: left
+  width: 440px
+
+
+.text_box
+  margin: 80px 0
+  float: right
+  width: 440px
 
 input[type="text"]
   background: transparent
-  width: 460px
+  width: 100%
   font-size: 20px
   font-weight: 700
   color: $dark_green
@@ -233,7 +256,7 @@ input[type="text"]
 
 textarea
   background: rgba($dark_green, .3)
-  width: 460px
+  width: 100%
   height: 235px
   font-size: 20px
   font-weight: 700
@@ -250,38 +273,8 @@ textarea
     outline: 0
 
 
-@media screen and(max-width: 1000px)
-
-  .inputs, .text_box
-    float: none
-    margin: 80px auto
-    text-align: center
-
-
-  input[type="text"], textarea
-    width: 80%
-    margin: 40px auto 0
-
-
-@media screen and(max-width: 900px)
-
-  .container
-    width: 80%
-
-  .hero_image, .hero_text
-    float: none
-    text-align: center
-
-  .hero_image, .hero_content
-    margin: auto
-
-  .hero_text
-    width: 90%
-    margin: 0 auto 40px
-
-  .feature
-    float: none
-    width: 100%
+@import _media_queries.sass
+@import _animations.sass
 
 
 
